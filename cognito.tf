@@ -93,3 +93,8 @@ resource "aws_cognito_user_pool_client" "user_pool_client" {
   allowed_oauth_scopes                 = ["phone","email", "openid"]
   supported_identity_providers         = ["COGNITO"]
 }
+
+resource "aws_cognito_user_pool_domain" "average_domain" {
+  domain       = "auth-average"
+  user_pool_id = aws_cognito_user_pool.average_pool.id
+}
