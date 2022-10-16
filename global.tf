@@ -30,7 +30,6 @@ locals {
   serviceTitle = title(replace(local.product_information.context.service, "_", " "))
   hostingZone = {
     name = "thunder-arrow.cloud"
-    certificateDomain = "thunder-arrow.cloud"
   }
 }
 
