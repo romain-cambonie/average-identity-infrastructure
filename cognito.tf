@@ -87,7 +87,7 @@ resource "aws_cognito_user_pool" "average_pool" {
 resource "aws_cognito_user_pool_client" "user_pool_client" {
   name                                 = "average-client"
   user_pool_id                         = aws_cognito_user_pool.average_pool.id
-  callback_urls                        = ["https://average.thunder-arrow.cloud/account"]  //https://${join(".", [local.service.average.name, local.hostingZone.name])}
+  callback_urls                        = ["https://average.thunder-arrow.cloud/jwt"]  //https://${join(".", [local.service.average.name, local.hostingZone.name])}
   allowed_oauth_flows_user_pool_client = true
   allowed_oauth_flows                  = ["implicit"]
   allowed_oauth_scopes                 = ["phone","email", "openid"]
